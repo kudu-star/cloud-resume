@@ -105,3 +105,66 @@ Example:
 az storage account show --name devsacloudresume --query "primaryEndpoints.web" --output tsv
 
 9. Optional: Enable metrics on the website.
+
+10. Setup a custom domain name and SSL certificate for your website if you have not already done so. 
+    ( I can recommend using Cloudflare for this)
+    
+11. You can follow this guide provided my Microsoft to map a custom domain name to your Azure Storage account:
+    https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal
+
+12. Get the host name of your storage endpoint by running the following command:
+```bash
+az storage account show --name <storage-account-name> --query "primaryEndpoints.web" --output tsv
+```
+Example:
+```bash
+az storage account show --name devsacloudresume --query "primaryEndpoints.web" --output tsv
+
+13. Copy the value of the Blob service endpoint or the Static website endpoint to a text file. 
+    You will need this value later.
+
+14. Remove the protocol identifier (For example: HTTPS) and the trailing slash from that string. 
+    The following table contains examples.
+    Type of endpoint	endpoint	                                       host name
+    blob service	    https://mystorageaccount.blob.core.windows.net/    mystorageaccount.blob.core.windows.net
+    static website	    https://mystorageaccount.z5.web.core.windows.net/  mystorageaccount.z5.web.core.windows.net
+
+15. Create a canonical name (CNAME) record with your domain provider
+    Create a CNAME record to point to your host name. 
+    A CNAME record is a type of Domain Name System (DNS) record that maps a source domain name to a destination domain name.
+
+    - Sign in to your domain registrar's website, and then go to the page for managing DNS setting.
+    - You might find the page in a section named Domain Name, DNS, or Name Server Management.
+    - Find the section for managing CNAME records.
+    - You might have to go to an advanced settings page and look for CNAME, Alias, or Subdomains.
+    - Create a CNAME record. As part of that record, provide the following items:
+        -The subdomain alias such as www or photos. The subdomain is required, root domains are not supported.
+        -The host name that you obtained in the Get the host name of your storage endpoint section at Step 12.
+
+16. Verify that the CNAME record is set up correctly by running the following command:
+```bash
+nslookup <subdomain-alias> <host-name>
+```
+Example:
+```bash
+nslookup www devsacloudresume.z5.web.core.windows.net
+
+17. Add the custom domain name to your storage account by running the following command:
+```bash
+az storage account update --name <storage-account-name> --custom-domain <host-name> --use-subdomain false
+```
+    Replace the <resource-group-name> placeholder with the name of the resource group.
+    Replace the <storage-account-name> placeholder with the name of the storage account.
+    Replace the <custom-domain-name> placeholder with the name of your custom domain, including the subdomain.
+    
+    For example, if your domain is contoso.com and your subdomain alias is www, enter www.contoso.com. If your subdomain is photos, enter photos.contoso.com.
+
+
+Example:
+```bash
+az storage account update --name devsacloudresume --custom-domain devsacloudresume.z5.web.core.windows.net --use-subdomain false
+In my case I got an error message:
+```bash
+    (StorageDomainNameCouldNotVerify) The custom domain name could not be verified. CNAME mapping from devsacloudresume.z5.web.core.windows.net to any of devsacloudresume.blob.core.windows.net,devsacloudresume.z35.web.core.windows.net does not exist.
+    Code: StorageDomainNameCouldNotVerify
+    Message: The custom domain name could not be verified. CNAME mapping from devsacloudresume.z5.web.core.windows.net to any of devsacloudresume.blob.core.windows.net,devsacloudresume.z35.web.core.windows.net does not exist.
