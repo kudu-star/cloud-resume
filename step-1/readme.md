@@ -9,7 +9,7 @@ Azure Resource Manager
 Azure CLI
 Terraform
 
-This project can be broken up in to the following sections:
+This project can be broken up in to the following stages:
 1. Create a basic website
 2. Create a visitor counter
 3. Create a database
@@ -22,7 +22,7 @@ Next steps:
 1. Create a basic website
 links:https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-cli#enable-static-website-hosting
 
-Step 1 Step-by-step guide:
+Stage 1 Step-by-step guide:
 1. Login to your Azure account
 2. Now view which subscriptions you have by running the following command:
 ```bash

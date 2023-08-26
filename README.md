@@ -22,7 +22,7 @@ Azure Resource Manager
 Azure CLI
 Terraform
 
-This project can be broken up in to the following sections:
+This project can be broken up in to the following stages:
 1. Create a basic website
 2. Create a visitor counter
 3. Create a database
