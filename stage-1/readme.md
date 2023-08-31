@@ -13,19 +13,15 @@ Example:
 ```bash
 az account list --output table
 ```
-A few accounts are skipped as they don't have 'Enabled' state. Use '--all' to display them.
+`A few accounts are skipped as they don't have 'Enabled' state. Use '--all' to display them.
 Name    CloudName    SubscriptionId                        TenantId                              State    IsDefault
 ------  -----------  ------------------------------------  ------------------------------------  -------  -----------
 dev     AzureCloud   8c781-------------------------------  9f0------------------------------  Enabled  True
 prod    AzureCloud   2a5ed-------------------------------  9f0------------------------------  Enabled  False
-
+`
 3. Set the subscription you want to use by running the following command:
 ```bash
 az account set --subscription <subscription name>
-```
-Example:
-```bash
-az account set -s 8c781f5c-b4c9-4184-9915-7bb3b64a885e    #dev
 ```
 
 4. Create a resource group by running the following command:
