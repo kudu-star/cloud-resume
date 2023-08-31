@@ -3,7 +3,11 @@
 Project Scope
 
 Overview
-The cloud-resume project aims to create a basic website that includes a visitor counter. The counter will be implemented using a database and will update in real-time. The website will be hosted in the cloud and built using a CI/CD pipeline. The infrastructure will be defined using Infrastructure as Code and the website will be built using a serverless architecture.
+The cloud-resume project aims to create a basic website that includes a visitor counter. 
+The counter will be implemented using a database and will update in real-time. 
+The website will be hosted in the cloud and built using a CI/CD pipeline. 
+The infrastructure will be defined using Infrastructure as Code and 
+The website will be built using a serverless architecture.
 
 Goals
 - Create a basic website that includes a visitor counter
