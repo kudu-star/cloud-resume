@@ -46,7 +46,7 @@ Azure Resource Manager
 Azure CLI
 Terraform
 
-This project can be broken up in to the following stages:
+# This project can be broken up in to the following stages:
 1. Create a basic website
 2. Create a visitor counter
 3. Create a database
@@ -55,7 +55,8 @@ This project can be broken up in to the following stages:
 6. Create a Infrastructure as Code
 7. Write a blog post about the project
 
-Next steps:
-1. Create a basic website
+**Next step:**
+
+**Stage 1 - Create a basic website**
 links:https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-cli#enable-static-website-hosting
 ```
