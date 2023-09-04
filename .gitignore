@@ -1,0 +1,11 @@
+# Ignore files with .log extension
+*.log
+
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore the .env file
+.env
+
+# Ignore the .vscode directory
+.vscode/
