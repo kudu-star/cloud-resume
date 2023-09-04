@@ -55,8 +55,29 @@ Terraform
 6. Create a Infrastructure as Code
 7. Write a blog post about the project
 
+We're going to break up the "visitor counter"stage of the project - which requires creating a
+cloud-based API that communicates with the website. 
+
+We use an API that accepts a request from the website, increments the counter, and returns the
+current count.
+
+An Azure function with a web trigger is a good choice for this API, 
+as it's serverless, can be scaled and is relatively cheap.
+
+For the Azure function I will use some Python.
+There will also be a test for the python code.
+
+When all the above is working we can use IAC to deploy the function and database to Azure.
+
+Using source control so that I don't have to update the API from my local machine
+I'll be using CI/CD that connects to my Github repo
+
+CI/CD backend will use Github Actions to build and deploy the function and database to Azure.
+CI/CD frontend  will use a secondary Github Actions workflow to build and deploy the website to Azure.
+
+Security note: Do not commit Azure credentials to source control.
+
+
 **Next step:**
 
 **Stage 1 - Create a basic website**
-links:https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-cli#enable-static-website-hosting
-```

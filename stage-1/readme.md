@@ -1,7 +1,17 @@
 # Stage 1
 
 **Create a basic website**
-links:https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-cli#enable-static-website-hosting
+The site needs to be static, written in Html and styled using CSS.
+The site needs to be hosted in the Azure and accessible to users.
+I won't' be using Azure Storage static website as this is about learning how to use static sites first.
+The site will need to use https and have a custom domain name, for this we'll need to use an Azure CDN.
+
+Guides I used:
+**HTML** - https://www.freecodecamp.org/news/html-css-11-hour-course/
+**CSS** - https://css-tricks.com/guides 
+**Azure tutorial for a static site setup** - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal
+**Azure tutorial for setting up a CDN** - https://docs.microsoft.com/en-us/azure/cdn/cdn-custom-ssl?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate
+**DNS** - https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/
 
 **Step-by-step guide:**
 1. Login to your Azure account
@@ -271,3 +281,4 @@ Now you have a basic website hosted in Azure with a custom domain name and https
 There are other settings you can configure on your cdn endpoint such as caching rules, compression, http2, etc. but I will leave that for you to explore.
 
 Now move onto Stage 2...
+Creating the visitor counter
