@@ -2,7 +2,7 @@
  
 I've broken this down into goals
 
-**Goal 1: Get the Azure4 function communicating with the database**
+**Goal 1: Get the Azure function communicating with the database**
     1. Create a new resource group for the API
     2. Setup a Azure function using python
     3. Create a Cosmos DB table (I did this via the portal)
