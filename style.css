@@ -28,3 +28,6 @@ p {
 .my-element {
     background-color: #0b0b0b;
 }
+#visitor-count {
+    text-align: center;
+  }
