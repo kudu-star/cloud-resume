@@ -1,4 +1,7 @@
 # cloud-resume
+![readme-banner-image](images/readme-banner.webp)
+
+
 ```
 Project Scope
 

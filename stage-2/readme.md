@@ -1,13 +1,22 @@
  # Stage 2 
  
-I've broken this down into three goals
+This is the visitor counter section. This part requires  creating a cloud based  API
+that communicates with our website.
+The visitor counter will need to update its count in a database somewhere.
+
+We'll try use the table API of Azure cosmos db for this (serverless capacity mode for this).
+We don't want our javascript communicating directly with the Cosmos db, instead we will try use the API
+from the web app to communicate with the database. hint: use an Azure functions with a http trigger for this.
+
+The Azure function will need a bit of Python code. Use the Azure Python SDk for this.
+Integrate CI/CD for all of the above.
 
 **Goal 1: Get the Azure function communicating with the database**
 1. Create a new resource group for the API
-2. Setup a Azure function using python
+2. Setup a Azure function using Python
 3. Create a Cosmos DB table (I did this via the portal)
 4. Setup the bindings between the function and the database
-5. The azure function needs to save a value to the table
+5. The Azure function needs to save a value to the table
 6. Test the function (from the portal for now)
 7. Setup the output bindings to return the  updated value from the function.
 
