@@ -22,7 +22,6 @@ coverage/
 .DS_Store
 Thumbs.db
 # Ignore package lock files
-package-lock.json
 yarn.lock
 # Ignore test output files
 test-output/
@@ -30,6 +29,8 @@ test-output/
 debug.log
 # Ignore documentation files
 docs/
+*.md
+*.rst
 # Ignore configuration files
 config.json
 # Ignore backup files
@@ -43,7 +44,6 @@ config.json
 # Ignore log files from specific applications
 app.log
 # Ignore specific IDE settings
-.idea/workspace.xml
 # Ignore specific cache directories 
 .cache/
 # Ignore specific temporary files
@@ -51,4 +51,7 @@ app.log
 # Ignore specific database files
 *.db
 # Ignore specific image files
-*.png
+# Ignore specific image files
+# *.png
+# If you want to ignore only certain PNG files, specify their paths, e.g.:
+# docs/images/*.png
